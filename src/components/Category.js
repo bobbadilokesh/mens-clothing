@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import shirt from '../images/shirt.jpg';
 import tshirt from '../images/t-shirt.jpg';
 import bottoms from '../images/bottoms.webp';
@@ -7,6 +8,7 @@ import sweatshirt from '../images/sweatshirt.webp';
 import trousers from '../images/trousers.webp';
 
 function Category() {
+  const navigate = useNavigate();
   const [categories] = useState([
     { id: 1, image: shirt, title: "Shirts" },
     { id: 2, image: tshirt, title: "T-Shirts" },
@@ -37,6 +39,7 @@ function Category() {
             <div
               className="card h-100 category-card"
               style={{ transition: 'transform 0.3s, box-shadow 0.3s' }}
+              onClick={() => navigate(`/category/${item.title.toLowerCase()}`)}
             >
               <img
                 src={item.image}
