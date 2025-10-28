@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import shirt from '../images/shirt.jpg';
 import tshirt from '../images/t-shirt.jpg';
 import bottoms from '../images/bottoms.webp';
@@ -7,6 +8,8 @@ import sweatshirt from '../images/sweatshirt.webp';
 import trousers from '../images/trousers.webp';
 
 function Category() {
+  const navigate = useNavigate();
+
   const [categories] = useState([
     { id: 1, image: shirt, title: "Shirts" },
     { id: 2, image: tshirt, title: "T-Shirts" },
@@ -16,26 +19,30 @@ function Category() {
     { id: 6, image: trousers, title: "Trousers" },
   ]);
 
+  function handleCategoryClick(title) {
+    // Match route names exactly
+    switch (title) {
+      case "Shirts":
+        navigate("/Shirts");
+        break;
+      case "T-Shirts":
+        navigate("/Tshirts");
+        break;
+      default:
+        navigate(`/${title.toLowerCase()}`);
+        break;
+    }
+  }
+
   return (
     <div className="container mt-5">
-      <h2
-        className="text-center mb-4"
-        style={{
-          fontFamily: "'Poppins', sans-serif",
-          fontWeight: 600,
-          letterSpacing: "1px",
-        }}
-      >
-        Categories
-      </h2>
+      <h2 className="text-center mb-4">Categories</h2>
       <div className="row g-4 justify-content-start">
         {categories.map((item) => (
-          <div
-            key={item.id}
-            className="col-6 col-md-4 col-lg-2"
-          >
+          <div key={item.id} className="col-6 col-md-4 col-lg-2">
             <div
               className="card h-100 category-card"
+              onClick={() => handleCategoryClick(item.title)}
               style={{ transition: 'transform 0.3s, box-shadow 0.3s' }}
             >
               <img
@@ -44,7 +51,7 @@ function Category() {
                 className="card-img-top"
                 style={{ height: '250px', objectFit: 'cover' }}
               />
-              <div className="card-body p-2 text-center" style={{ fontFamily: 'Roboto, sans-serif' }}>
+              <div className="card-body p-2 text-center">
                 <h6 className="card-title">{item.title}</h6>
               </div>
             </div>
