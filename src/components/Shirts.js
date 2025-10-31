@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { CartContext } from '../cartcontent/CartContent'; // ✅ correct folder name
+import { CartContext } from '../cartcontent/CartContent'; 
 import shirt1 from '../shirts/shirts1.jpg';
 import shirt2 from '../shirts/shirts2.jpg';
 import shirt3 from '../shirts/shirts3.jpg';
