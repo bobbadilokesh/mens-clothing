@@ -33,10 +33,10 @@ function Footer() {
           <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
             <h5 className="text-uppercase fw-bold">Follow Us</h5>
             <p>Stay connected for the latest drops & offers</p>
-            <a  className="text-light me-3"><i className="bi bi-facebook"></i></a>
-            <a  className="text-light me-3"><i className="bi bi-instagram"></i></a>
-            <a  className="text-light me-3"><i className="bi bi-twitter"></i></a>
-            <a  className="text-light me-3"><i className="bi bi-youtube"></i></a>
+            <a href="https://www.facebook.com/" className="text-light me-3"><i className="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/" className="text-light me-3"><i className="bi bi-instagram"></i></a>
+            <a href="https://x.com/" className="text-light me-3"><i className="bi bi-twitter"></i></a>
+            <a href="https://www.youtube.com/" className="text-light me-3"><i className="bi bi-youtube"></i></a>
           </div>
 
           {/* Customer Support */}

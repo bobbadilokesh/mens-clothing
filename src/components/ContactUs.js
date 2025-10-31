@@ -100,10 +100,10 @@ function ContactUs() {
             <p className="text-secondary">Sunday: Closed</p>
 
             <div className="mt-3">
-              <a  className="text-dark me-3 fs-4"><i className="bi bi-facebook"></i></a>
-              <a  className="text-dark me-3 fs-4"><i className="bi bi-instagram"></i></a>
-              <a  className="text-dark me-3 fs-4"><i className="bi bi-twitter"></i></a>
-              <a  className="text-dark fs-4"><i className="bi bi-youtube"></i></a>
+              <a href="https://www.facebook.com/" className="text-dark me-3 fs-4"><i className="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/" className="text-dark me-3 fs-4"><i className="bi bi-instagram"></i></a>
+              <a href="https://x.com/" className="text-dark me-3 fs-4"><i className="bi bi-twitter"></i></a>
+              <a href="https://www.youtube.com/"  className="text-dark fs-4"><i className="bi bi-youtube"></i></a>
             </div>
           </div>
         </div>
