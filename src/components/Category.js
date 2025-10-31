@@ -35,7 +35,7 @@ function Category() {
   }
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5" id='Categories'>
       <h2 className="text-center mb-4">Categories</h2>
       <div className="row g-4 justify-content-start">
         {categories.map((item) => (

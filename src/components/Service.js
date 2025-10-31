@@ -2,63 +2,51 @@ import React from 'react';
 
 function Service() {
   return (
-    <div className="container my-5">
+    <div className="container my-5" id='Services'>
       <h2 className="text-center mb-4 fw-bold">Our Services</h2>
       <div className="row">
-       
-        <div className="col-md-4">
-          <div className="card shadow-sm mb-4 border-0">
-            {/* <img
-              src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba2"
-              className="card-img-top"
-              alt="Fashion Collection"
-            /> */}
-            <div className="card-body text-center">
-              <h5 className="card-title fw-bold">Trendy Men's Fashion</h5>
-              <p className="card-text">
-                Explore the latest men's styles and outfits handpicked to suit every occasion.
-              </p>
+        {[
+          {
+            title: "Trendy Men's Fashion",
+            text: "Explore the latest men's styles and outfits handpicked to suit every occasion.",
+          },
+          {
+            title: "Fast & Free Delivery",
+            text: "Get your orders delivered quickly and safely right to your doorstep.",
+          },
+          {
+            title: "24/7 Customer Support",
+            text: "Our team is always ready to assist you with any questions or concerns.",
+          },
+        ].map((service, index) => (
+          <div className="col-md-4" key={index}>
+            <div
+              className="card shadow-sm mb-4 border-0 text-center p-3"
+              style={{
+                transition: "all 0.3s ease",
+                cursor: "pointer",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-8px)";
+                e.currentTarget.style.boxShadow =
+                  "0 8px 20px rgba(0, 0, 0, 0.2)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow =
+                  "0 2px 8px rgba(0, 0, 0, 0.1)";
+              }}
+            >
+              <div className="card-body">
+                <h5 className="card-title fw-bold">{service.title}</h5>
+                <p className="card-text">{service.text}</p>
+              </div>
             </div>
           </div>
-        </div>
-
-       
-        <div className="col-md-4">
-          <div className="card shadow-sm mb-4 border-0">
-            {/* <img
-              src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47"
-              className="card-img-top"
-              alt="Delivery Service"
-            /> */}
-            <div className="card-body text-center">
-              <h5 className="card-title fw-bold">Fast & Free Delivery</h5>
-              <p className="card-text">
-                Get your orders delivered quickly and safely right to your doorstep.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      
-        <div className="col-md-4">
-          <div className="card shadow-sm mb-4 border-0">
-            {/* <img
-              src="https://images.unsplash.com/photo-1592878904946-b3cd8b9a0a7e"
-              className="card-img-top"
-              alt="Customer Support"
-            /> */}
-            <div className="card-body text-center">
-              <h5 className="card-title fw-bold">24/7 Customer Support</h5>
-              <p className="card-text">
-                Our team is always ready to assist you with any questions or concerns.
-              </p>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
 }
 
 export default Service;
-

@@ -18,6 +18,11 @@ import Sweatshirts from './components/Sweatshirts';
 import Trouser from './components/Trouser';
 import AllProducts from './components/AllProducts';
 import Service from './components/Service';
+import Faq from './components/Faq';
+import Shipping from './components/Shipping'; 
+import ReturnPolicy from './components/ReturnPolicy';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import ContactUs from './components/ContactUs';
 
 function App() {
   return (
@@ -46,6 +51,11 @@ function App() {
             <Route path="/trousers" element={<Trouser />} />
             <Route path="/allproducts" element={<AllProducts />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/shipping" element={<Shipping />} />
+            <Route path="/returns" element={<ReturnPolicy />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/contact" element={<ContactUs />} />
           </Routes>
 
           <Footer />

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { CartContext } from "../cartcontent/CartContent";
 
-// 🧥 Import all your product images
+
 import shirts1 from "../shirts/shirts1.jpg";
 import shirts2 from "../shirts/shirts2.jpg";
 import tshirt1 from "../tshirts/tshirt1.jpg";
@@ -58,7 +58,7 @@ function Allproducts() {
     alert(`Added ${quantity} × ${selectedProduct.name} (${selectedSize}) to cart!`);
   };
 
-  // ✅ Product detail page
+ 
   if (selectedProduct) {
     return (
       <div className="container mt-5">
@@ -74,7 +74,7 @@ function Allproducts() {
             <h2>{selectedProduct.name}</h2>
             <p className="fs-5 text-muted mb-3">₹{selectedProduct.price}</p>
 
-            {/* Quantity */}
+    
             <div className="mb-3">
               <button
                 className="btn btn-outline-dark me-2"
@@ -91,7 +91,6 @@ function Allproducts() {
               </button>
             </div>
 
-            {/* Size */}
             <div className="mb-4">
               <p>Select Size:</p>
               {["S", "M", "L", "XL", "XXL"].map((size) => (
@@ -119,7 +118,7 @@ function Allproducts() {
     );
   }
 
-  // ✅ Product listing grid
+ 
   return (
     <div className="container mt-5">
       <h2 className="text-center mb-4 fw-bold">All Products</h2>

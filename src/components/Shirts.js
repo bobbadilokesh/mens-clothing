@@ -65,42 +65,84 @@ function Shirts() {
   };
 
   if (selectedShirt) {
-    return (
-      <div className="container mt-5">
-        <div className="row align-items-center">
-          <div className="col-md-6 text-center mb-4">
-            <img src={selectedShirt.image} alt={selectedShirt.name} className="img-fluid rounded shadow" />
+  return (
+    <div
+      className="container d-flex justify-content-center mt-5"
+      style={{
+        minHeight: '80vh',
+      }}
+    >
+      <div
+        className="row align-items-center justify-content-center"
+        style={{
+          maxWidth: '1100px',
+          width: '100%',
+          columnGap: '60px', 
+        }}
+      >
+        
+        <div className="col-md-5 text-center mb-4 d-flex justify-content-center">
+          <img
+            src={selectedShirt.image}
+            alt={selectedShirt.name}
+            className="img-fluid rounded shadow"
+            style={{
+              width: '450px',
+              maxWidth: '480px',
+              height: '480px',
+              objectFit: 'cover',
+              borderRadius: '10px',
+            }}
+          />
+        </div>
+
+        <div className="col-md-5">
+          <h2>{selectedShirt.name}</h2>
+          <p className="fs-5 text-muted mb-3">₹{selectedShirt.price}</p>
+
+          <div className="mb-3">
+            <button
+              className="btn btn-outline-dark me-2"
+              onClick={() => setQuantity(Math.max(1, quantity - 1))}
+            >
+              −
+            </button>
+            <span className="fs-5 mx-2">{quantity}</span>
+            <button
+              className="btn btn-outline-dark"
+              onClick={() => setQuantity(quantity + 1)}
+            >
+              +
+            </button>
           </div>
-          <div className="col-md-6">
-            <h2>{selectedShirt.name}</h2>
-            <p className="fs-5 text-muted mb-3">₹{selectedShirt.price}</p>
 
-            <div className="mb-3">
-              <button className="btn btn-outline-dark me-2" onClick={() => setQuantity(Math.max(1, quantity - 1))}>−</button>
-              <span className="fs-5 mx-2">{quantity}</span>
-              <button className="btn btn-outline-dark" onClick={() => setQuantity(quantity + 1)}>+</button>
-            </div>
-
-            <div className="mb-4">
-              <p>Select Size:</p>
-              {['S', 'M', 'L', 'XL', 'XXL'].map(size => (
-                <button
-                  key={size}
-                  className={`btn me-2 ${selectedSize === size ? 'btn-dark' : 'btn-outline-dark'}`}
-                  onClick={() => setSelectedSize(size)}
-                >
-                  {size}
-                </button>
-              ))}
-            </div>
-
-            <button className="btn btn-success me-3" onClick={handleAddToCart}>Add to Cart</button>
-            <button className="btn btn-secondary" onClick={handleBack}>Back</button>
+          <div className="mb-4">
+            <p>Select Size:</p>
+            {['S', 'M', 'L', 'XL', 'XXL'].map((size) => (
+              <button
+                key={size}
+                className={`btn me-2 ${
+                  selectedSize === size ? 'btn-dark' : 'btn-outline-dark'
+                }`}
+                onClick={() => setSelectedSize(size)}
+              >
+                {size}
+              </button>
+            ))}
           </div>
+
+          <button className="btn btn-success me-3" onClick={handleAddToCart}>
+            Add to Cart
+          </button>
+          <button className="btn btn-secondary" onClick={handleBack}>
+            Back
+          </button>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
+
 
   return (
     <div className="container mt-5">
@@ -119,8 +161,12 @@ function Shirts() {
                 justifyContent: 'space-between',
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
-              onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.03)'}
-              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.transform = 'scale(1.03)')
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.transform = 'scale(1)')
+              }
             >
               <div style={{ height: '250px', overflow: 'hidden' }}>
                 <img

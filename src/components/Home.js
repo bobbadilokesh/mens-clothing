@@ -4,7 +4,7 @@ import cover from '../images/cover.jpg';
 function Home() {
     return (
         <div>
-            <div className="card border-0">
+            <div className="card border-0" id='Home'>
                 <img
                     src={cover}
                     className="card-img-top img-fluid"

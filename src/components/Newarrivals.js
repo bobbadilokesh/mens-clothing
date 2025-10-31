@@ -25,7 +25,7 @@ function Newarrivals() {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5" id="NewArrivals">
       <h2
         className="text-center mb-4"
         style={{

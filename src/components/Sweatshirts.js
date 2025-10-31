@@ -66,63 +66,89 @@ function Sweatshirts() {
     alert(`Added ${quantity} × ${selectedItem.name} (${selectedSize}) to cart!`);
   };
 
-  if (selectedItem) {
-    return (
-      <div className="container mt-5">
-        <div className="row align-items-center">
-          <div className="col-md-6 text-center mb-4">
-            <img
-              src={selectedItem.image}
-              alt={selectedItem.name}
-              className="img-fluid rounded shadow"
-            />
-          </div>
-          <div className="col-md-6">
-            <h2>{selectedItem.name}</h2>
-            <p className="fs-5 text-muted mb-3">₹{selectedItem.price}</p>
+ if (selectedItem) {
+  return (
+    <div
+      className="container d-flex justify-content-center mt-5"
+      style={{
+        minHeight: '80vh',
+      }}
+    >
+      <div
+        className="row align-items-center justify-content-center"
+        style={{
+          maxWidth: '1100px',
+          width: '100%',
+          columnGap: '60px',
+        }}
+      >
+        {/* Image Section */}
+        <div className="col-md-5 text-center mb-4 d-flex justify-content-center">
+          <img
+            src={selectedItem.image}
+            alt={selectedItem.name}
+            className="img-fluid rounded shadow"
+            style={{
+              width: '450px',
+              maxWidth: '480px',
+              height: '480px',
+              objectFit: 'cover',
+              borderRadius: '10px',
+            }}
+          />
+        </div>
 
-            {/* Quantity Section */}
-            <div className="mb-3">
-              <button
-                className="btn btn-outline-dark me-2"
-                onClick={() => setQuantity(Math.max(1, quantity - 1))}
-              >
-                −
-              </button>
-              <span className="fs-5 mx-2">{quantity}</span>
-              <button
-                className="btn btn-outline-dark"
-                onClick={() => setQuantity(quantity + 1)}
-              >
-                +
-              </button>
-            </div>
+        {/* Details Section */}
+        <div className="col-md-5">
+          <h2>{selectedItem.name}</h2>
+          <p className="fs-5 text-muted mb-3">₹{selectedItem.price}</p>
 
-            {/* Size Selection */}
-            <div className="mb-4">
-              <p>Select Size:</p>
-              {['S', 'M', 'L', 'XL', 'XXL'].map(size => (
-                <button
-                  key={size}
-                  className={`btn me-2 ${selectedSize === size ? 'btn-dark' : 'btn-outline-dark'}`}
-                  onClick={() => setSelectedSize(size)}
-                >
-                  {size}
-                </button>
-              ))}
-            </div>
-
-            <button className="btn btn-success me-3" onClick={handleAddToCart}>
-              Add to Cart
+          {/* Quantity Section */}
+          <div className="mb-3">
+            <button
+              className="btn btn-outline-dark me-2"
+              onClick={() => setQuantity(Math.max(1, quantity - 1))}
+            >
+              −
             </button>
-            <button className="btn btn-secondary" onClick={handleBack}>
-              Back
+            <span className="fs-5 mx-2">{quantity}</span>
+            <button
+              className="btn btn-outline-dark"
+              onClick={() => setQuantity(quantity + 1)}
+            >
+              +
             </button>
           </div>
+
+          {/* Size Selection */}
+          <div className="mb-4">
+            <p>Select Size:</p>
+            {['S', 'M', 'L', 'XL', 'XXL'].map((size) => (
+              <button
+                key={size}
+                className={`btn me-2 ${
+                  selectedSize === size ? 'btn-dark' : 'btn-outline-dark'
+                }`}
+                onClick={() => setSelectedSize(size)}
+              >
+                {size}
+              </button>
+            ))}
+          </div>
+
+          {/* Buttons */}
+          <button className="btn btn-success me-3" onClick={handleAddToCart}>
+            Add to Cart
+          </button>
+          <button className="btn btn-secondary" onClick={handleBack}>
+            Back
+          </button>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
+
 
   return (
     <div className="container mt-5">
