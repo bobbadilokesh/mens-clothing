@@ -3,6 +3,8 @@ import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './cartcontent/CartContent';
+import HomePage from "./components/HomePage";
+import ScrollToTop from "./components/ScrollToTop";
 
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -28,11 +30,12 @@ function App() {
   return (
     <CartProvider>
       <Router>
+        <ScrollToTop />
         <div className="App">
           <Navbar />
 
           <Routes>
-            <Route
+            {/* <Route
               path="/"
               element={
                 <>
@@ -42,7 +45,8 @@ function App() {
                   <Service />
                 </>
               }
-            />
+            /> */}
+            <Route path="/" element={<HomePage />} />
             <Route path="/shirts" element={<Shirts />} />
             <Route path="/tshirts" element={<Tshirts />} />
             <Route path="/bottoms" element={<Bottoms />} />
